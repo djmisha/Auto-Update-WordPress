@@ -35,7 +35,7 @@ function updateTheWordPress() {
 	add_action('wp_head','header_hook');
 
 	function header_hook() {
-		echo '<!-- Auto updates are ON -->';
+		echo '<!-- Auto updates are ON ◉_◉ Hackers BeWARE  -->';
 	}
 }
 
