@@ -40,5 +40,6 @@ function updateTheWordPress() {
 }
 
 // Run the update function 
+
 updateTheWordPress();
 
