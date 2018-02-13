@@ -11,7 +11,9 @@
  */
 
 
-// Function to Update WordPress 
+/* Function to Update WordPress */
+/* Function to Update WordPress */
+/* Function to Update WordPress */
 
 function updateTheWordPress() {
 
