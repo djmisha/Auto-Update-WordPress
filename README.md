@@ -5,7 +5,7 @@ This must-use plugin will update WordPress core, Themes and Plugins automaticall
 
 ## Installation 
 
-Install this plugin file into the /mu-plugins/ folder in the /wp-contents/ folder. This will activate the plugin. 
+Install this plugin file into the /mu-plugins/ folder in the /wp-contents/ folder. This will activate the plugin and from there it will work automatically. 
 
 ## Options Page
 
