@@ -63,7 +63,7 @@ add_action( 'admin_init', 'the_auto_update_register_settings' );
 
 function the_auto_update_register_options_page() {
   	add_options_page(
-		'Page Title', 
+		'The Auto Update', 
 		'The Auto Update', 
 		'manage_options', 
 		'the_auto_update', 
@@ -92,9 +92,11 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 		 <td><input type="checkbox" id="the_auto_update_option_name" name="the_auto_update_option_name" value="<?php echo get_option('the_auto_update_option_name'); ?>" /></td>
 	 	 </tr>
 		  </table>
-	  	<?php submit_button(); ?>
+	  	<?php //submit_button(); ?>
 	  	</form>
 	</div>
+
+
 
 <?php 
 
@@ -105,7 +107,7 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 	// How Available Plugin Updates
 	$update_data = wp_get_update_data();
 	echo '<h3>';
-	echo $update_data['counts']['plugins'] . ' updated available. But you no do nothing at all.';
+	echo $update_data['counts']['plugins'] . ' updates available and updating soon. ';
 	echo '</h3>';
 
 	// List of All Install Plugins 
