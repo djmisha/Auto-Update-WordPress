@@ -105,7 +105,11 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 	// How Available Plugin Updates
 	$update_data = wp_get_update_data();
 	echo '<h3>';
+<<<<<<< HEAD
 	echo $update_data['counts']['plugins'] . ' updates available.';
+=======
+	echo $update_data['counts']['plugins'] . ' updated available. But you no do nothing at all.';
+>>>>>>> 5cf2dcae3060fe0f09d21df9f8ed9119d9a8818d
 	echo '</h3>';
 
 	// List of All Install Plugins 
