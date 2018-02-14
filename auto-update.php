@@ -7,13 +7,13 @@
   Version: 420 
   Author: Misha Osinovskiy
   Author URI: http://mynameismisha.com
-  Disclaimer: 
+  Disclaimer: Use at your own risk and backup early and often. 
  */
 
 
-/* Function to Update WordPress */
-/* Function to Update WordPress */
-/* Function to Update WordPress */
+/*=====================================================
+=            Function to Update WordPress             =
+=====================================================*/
 
 function updateTheWordPress() {
 
@@ -32,23 +32,21 @@ function updateTheWordPress() {
 	// Auto Update All Themes 
 	add_filter( 'auto_update_theme', '__return_true' );
 
-	// Make a note in the head that plugin is loaded  
-
+	// Victory, our site is updating 
 	add_action('wp_head','header_hook');
 
 	function header_hook() {
-		echo '<!-- Auto updates are on! -->';
+		echo '<!-- Auto WordPress updates are on! -->';
 	}
 }
-
-// Run the update function 
 
 updateTheWordPress();
 
 
-/* Register an Options page under settings  */
-/* Register an Options page under settings  */
-/* Register an Options page under settings  */
+/*================================================================
+=            Register an Options Page Admin > Setting            =
+================================================================*/
+
 
 function the_auto_update_register_settings() {
 	// you can add more options like this
@@ -74,34 +72,29 @@ function the_auto_update_register_options_page() {
 }
 
 add_action('admin_menu', 'the_auto_update_register_options_page');
-/*=====================================
-=            Settings Page            =
-=====================================*/
 
+
+ /*===============================================
+ =            Build the Settings Page            =
+ ===============================================*/
 
 	function the_auto_update_options_page() { ?>
 	  <div class="wrap">
 	  <?php screen_icon(); ?>
-	  <h2>The Auto Update Plugin Settings and Information</h2>
-	  <h3>Center of Awesome for Kids who don't WordPress update good.</h3>
+	  <h2>The Auto Update Plugin Information </h2>
+	  <p>The plugin is active and running.  There is nothing more to do!  Your WordPress will now update automatically. </p>
 
 	  <form method="post" action="options.php">
 	  <?php settings_fields( 'the_auto_update_options_group' ); ?>
-	  <p>More options are coming soon to this page. </p>
 	  	<table>
 		<tr valign="top">
-		<th scope="row"><label for="the_auto_update_option_name">Label</label></th>
-		 <td><input type="text" id="the_auto_update_option_name" name="the_auto_update_option_name" value="<?php echo get_option('the_auto_update_option_name'); ?>" /></td>
+		<th scope="row"><label for="the_auto_update_option_name">Do you love this plugin? </label></th>
+		 <td><input type="checkbox" id="the_auto_update_option_name" name="the_auto_update_option_name" value="<?php echo get_option('the_auto_update_option_name'); ?>" /></td>
 	 	 </tr>
 		  </table>
-	  	<?php  submit_button(); ?>
+	  	<?php submit_button(); ?>
 	  	</form>
 	</div>
-
-
-/*=====  End of Settings Page  ======*/
-
-
 
 <?php 
 
@@ -109,13 +102,15 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 =            Show All Plugis            =
 =======================================*/
 
+	// How Available Plugin Updates
+	$update_data = wp_get_update_data();
+	echo '<h3>';
+	echo $update_data['counts']['plugins'] . ' updates available.';
+	echo '</h3>';
 
-	// Set an variable for the plugins array, and used get_plugins to populate
-
+	// List of All Install Plugins 
 	$all_plugins = get_plugins();
-
-		// Save the data to the error log so you can see what the array format is like.
-		// error_log( print_r( $all_plugins, true ) )
+	echo '<h2>Installed Plugins</h2>';
 
 	foreach ($all_plugins as $oneplugin ) {
 		echo '<div class="plugin-list">';
@@ -123,14 +118,4 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 	    	echo '<span>' . $oneplugin[Version] . '</span>' ;
 		echo '</div>';
 	}
-		// Number of available plugin updates
-		$update_data = wp_get_update_data();
-		echo '<br>';
-		echo '<h3>';
-		echo $update_data['counts']['plugins'] . ' updated available.';
-		echo '</h3>';
-	}
-
-
-/*=====  End of Show All Plugis  ======*/
-
+}
