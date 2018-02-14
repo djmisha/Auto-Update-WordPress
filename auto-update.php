@@ -3,11 +3,11 @@
 /*
   Plugin Name: The Auto Update  
   Plugin URI: http://mynameismisha.com
-  Description: This plugin will update your WordPress site automatically so that you don't have to, because you are a lazy.    
+  Description: This plugin will update your WordPress site automatically.   
   Version: 420 
   Author: Misha Osinovskiy
   Author URI: http://mynameismisha.com
-  Disclaimer: This code will probably make your website more awesome all of the time.  Use only if you are supper high on weed and/or crossfaded on weed and whiskey only. 
+  Disclaimer: 
  */
 
 
@@ -74,54 +74,63 @@ function the_auto_update_register_options_page() {
 }
 
 add_action('admin_menu', 'the_auto_update_register_options_page');
+/*=====================================
+=            Settings Page            =
+=====================================*/
 
-/* Build the Settings Page */
-/* Build the Settings Page */
-/* Build the Settings Page */
 
-function the_auto_update_options_page() { ?>
-  <div class="wrap">
-  <?php screen_icon(); ?>
-  <h2>The Auto Update Plugin Settings and Information</h2>
+	function the_auto_update_options_page() { ?>
+	  <div class="wrap">
+	  <?php screen_icon(); ?>
+	  <h2>The Auto Update Plugin Settings and Information</h2>
+	  <h3>Center of Awesome for Kids who don't WordPress update good.</h3>
 
-  <form method="post" action="options.php">
-  <?php settings_fields( 'the_auto_update_options_group' ); ?>
-  <h3>Center of Awesome for Kids who don't WordPress update good.</h3>
-  <p>More options are coming soon to this page. </p>
-  	<table>
-	<tr valign="top">
-	<th scope="row"><label for="the_auto_update_option_name">Label</label></th>
-	 <td><input type="text" id="the_auto_update_option_name" name="the_auto_update_option_name" value="<?php echo get_option('the_auto_update_option_name'); ?>" /></td>
- 	 </tr>
-	  </table>
-  	<?php  submit_button(); ?>
-  	</form>
-</div>
+	  <form method="post" action="options.php">
+	  <?php settings_fields( 'the_auto_update_options_group' ); ?>
+	  <p>More options are coming soon to this page. </p>
+	  	<table>
+		<tr valign="top">
+		<th scope="row"><label for="the_auto_update_option_name">Label</label></th>
+		 <td><input type="text" id="the_auto_update_option_name" name="the_auto_update_option_name" value="<?php echo get_option('the_auto_update_option_name'); ?>" /></td>
+	 	 </tr>
+		  </table>
+	  	<?php  submit_button(); ?>
+	  	</form>
+	</div>
+
+
+/*=====  End of Settings Page  ======*/
+
+
 
 <?php 
 
-/* Lets See if we can get all currently installed plugins / verions */
-/* Lets See if we can get all currently installed plugins / verions */
-/* Lets See if we can get all currently installed plugins / verions */
+/*=======================================
+=            Show All Plugis            =
+=======================================*/
 
-// Set an variable for the plugins array, and used get_plugins to populate
 
-$all_plugins = get_plugins();
+	// Set an variable for the plugins array, and used get_plugins to populate
 
-	// Save the data to the error log so you can see what the array format is like.
-	// error_log( print_r( $all_plugins, true ) )
+	$all_plugins = get_plugins();
 
-foreach ($all_plugins as $oneplugin ) {
-	echo '<div class="plugin-list">';
-    	echo '<span>' . $oneplugin[Name] . '</span> ';
-    	echo '<span>' . $oneplugin[Version] . '</span>' ;
-	echo '</div>';
-}
-	// Number of available plugin updates
-	$update_data = wp_get_update_data();
-	echo '<br>';
-	echo '<h3>';
-	echo $update_data['counts']['plugins'] . ' updated available.';
-	echo '</h3>';
-}
+		// Save the data to the error log so you can see what the array format is like.
+		// error_log( print_r( $all_plugins, true ) )
+
+	foreach ($all_plugins as $oneplugin ) {
+		echo '<div class="plugin-list">';
+	    	echo '<span>' . $oneplugin[Name] . '</span> ';
+	    	echo '<span>' . $oneplugin[Version] . '</span>' ;
+		echo '</div>';
+	}
+		// Number of available plugin updates
+		$update_data = wp_get_update_data();
+		echo '<br>';
+		echo '<h3>';
+		echo $update_data['counts']['plugins'] . ' updated available.';
+		echo '</h3>';
+	}
+
+
+/*=====  End of Show All Plugis  ======*/
 

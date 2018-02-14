@@ -1,6 +1,5 @@
 # The Auto Update Plugin for WordPress.
  
-
 This plugin will update WordPress core, Themes and Plugins automatically once installed. 
 
 ## Installation 
@@ -11,6 +10,6 @@ This plugin will update WordPress core, Themes and Plugins automatically once in
 
 ## Options Page
 
-The options page is coming soon...
+This page shows your installed plygins and the available updates. 
 
-
+	
