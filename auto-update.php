@@ -121,7 +121,7 @@ foreach ($all_plugins as $oneplugin ) {
 	$update_data = wp_get_update_data();
 	echo '<br>';
 	echo '<h3>';
-	echo $update_data['counts']['plugins'] . ' updated available.';
+	echo $update_data['counts']['plugins'] . ' updated available. But you no do nothing at all.';
 	echo '</h3>';
 }
 
