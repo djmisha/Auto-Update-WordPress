@@ -32,7 +32,7 @@ function updateTheWordPress() {
 	// Auto Update All Themes 
 	add_filter( 'auto_update_theme', '__return_true' );
 
-	// Victory, our site is updating 
+	// Victory, our site is updating, lets note in the head 
 	add_action('wp_head','header_hook');
 
 	function header_hook() {
@@ -96,8 +96,6 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 	  	</form>
 	</div>
 
-
-
 <?php 
 
 /*=======================================
@@ -107,12 +105,12 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 	// How Available Plugin Updates
 	$update_data = wp_get_update_data();
 	echo '<h3>';
-	echo $update_data['counts']['plugins'] . ' updates available and updating soon. ';
+	echo $update_data['counts']['plugins'] . ' updates available and will be updating soon. ';
 	echo '</h3>';
 
 	// List of All Install Plugins 
 	$all_plugins = get_plugins();
-	echo '<h2>Installed Plugins</h2>';
+	echo '<h2>Currently Installed Plugins</h2>';
 
 	foreach ($all_plugins as $oneplugin ) {
 		echo '<div class="plugin-list">';
