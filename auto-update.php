@@ -1,13 +1,13 @@
 <?php
 
 /*
-  Plugin Name: The Auto Update  
+  Plugin Name: WordPress Auto Update  
   Plugin URI: http://mynameismisha.com
   Description: This plugin will update your WordPress site automatically.   
   Version: 420 
   Author: Misha Osinovskiy
   Author URI: http://mynameismisha.com
-  Disclaimer: Use at your own risk and backup early and often. 
+  Disclaimer: Use at your own risk and backup your website early and often. 
  */
 
 
@@ -105,7 +105,7 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 	// How Available Plugin Updates
 	$update_data = wp_get_update_data();
 	echo '<h3>';
-	echo $update_data['counts']['plugins'] . ' updates available and will be updating soon. ';
+	echo $update_data['counts']['plugins'] . ' updates available. ';
 	echo '</h3>';
 
 	// List of All Install Plugins 
