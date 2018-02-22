@@ -10,9 +10,23 @@
   Disclaimer: Use at your own risk and backup your website early and often. 
  */
 
+/*=================================================================
+=            Create a Link to Setting in the Plugin Listing            =
+=================================================================*/
+
+function plugin_add_settings_link( $links ) {
+
+    $settings_link = '<a href="options-general.php?page=the_auto_update">' . __( 'Settings' ) . '</a>';
+    array_push( $links, $settings_link );
+  	return $links;
+}
+
+$plugin = plugin_basename( __FILE__ );
+add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
+
 
 /*=====================================================
-=            Function to Update WordPress             =
+=            The Main Function to Update WordPress    =
 =====================================================*/
 
 function updateTheWordPress() {
@@ -47,24 +61,23 @@ updateTheWordPress();
 =            Register an Options Page Admin > Setting            =
 ================================================================*/
 
-
 function the_auto_update_register_settings() {
 	// you can add more options like this
-	add_option( 'the_auto_update_option_name', 'This is my option value.');
+	add_option( 'the_auto_update_option_name_on_switch', 'Value');
 
 	register_setting( 
 		'the_auto_update_options_group', 
 		'the_auto_update_option_name', 
 		'the_auto_update_callback'
-	 );
+	);
 }
 
 add_action( 'admin_init', 'the_auto_update_register_settings' );
 
 function the_auto_update_register_options_page() {
-  	add_options_page(
-		'The Auto Update', 
-		'The Auto Update', 
+	add_options_page(
+		'Auto Update', 
+		'Auto Update', 
 		'manage_options', 
 		'the_auto_update', 
 		'the_auto_update_options_page'
@@ -74,48 +87,19 @@ function the_auto_update_register_options_page() {
 add_action('admin_menu', 'the_auto_update_register_options_page');
 
 
- /*===============================================
- =            Build the Settings Page            =
- ===============================================*/
+/*==========================================
+=            Call Options Page             =
+==========================================*/
 
-	function the_auto_update_options_page() { ?>
-	  <div class="wrap">
-	  <?php screen_icon(); ?>
-	  <h2>The Auto Update Plugin Information </h2>
-	  <p>The plugin is active and running.  There is nothing more to do!  Your WordPress will now update automatically. </p>
+function the_auto_update_options_page() {
 
-	  <form method="post" action="options.php">
-	  <?php settings_fields( 'the_auto_update_options_group' ); ?>
-	  	<table>
-		<tr valign="top">
-		<th scope="row"><label for="the_auto_update_option_name">Do you love this plugin? </label></th>
-		 <td><input type="checkbox" id="the_auto_update_option_name" name="the_auto_update_option_name" value="<?php echo get_option('the_auto_update_option_name'); ?>" /></td>
-	 	 </tr>
-		  </table>
-	  	<?php //submit_button(); ?>
-	  	</form>
-	</div>
+	if (isset($_POST['awesome_text'])) {
+		update_option('awesome_text', $_POST['awesome_text']);
+		$value = $_POST['awesome_text'];
+	} 
 
-<?php 
+	$value = get_option('awesome_text', 'This is my setting');
 
-/*=======================================
-=            Show All Plugis            =
-=======================================*/
-
-	// How Available Plugin Updates
-	$update_data = wp_get_update_data();
-	echo '<h3>';
-	echo $update_data['counts']['plugins'] . ' updates available. ';
-	echo '</h3>';
-
-	// List of All Install Plugins 
-	$all_plugins = get_plugins();
-	echo '<h2>Currently Installed Plugins</h2>';
-
-	foreach ($all_plugins as $oneplugin ) {
-		echo '<div class="plugin-list">';
-	    	echo '<span>' . $oneplugin[Name] . '</span> ';
-	    	echo '<span>' . $oneplugin[Version] . '</span>' ;
-		echo '</div>';
-	}
+	include 'auto-options.php';
 }
+

@@ -1,8 +1,8 @@
-# WordPress Auto Update
+# WordPress Auto Update Plugin
  
 ## How does it work? 
 
-The Auto Update Plugin for WordPress will update WordPress core, Themes and Plugins automatically once installed.  There is nothing more to do after installlation.  Updates are an essential part of security.  Be sure to back up your WordPress website regularly.  Happy auto updating!
+The WordPress Auto Update Plugin will update your WordPress core, Themes and Plugins automatically once installed.  There is nothing more to do after installation.  Updates are an essential part of security.  Be sure to back up your WordPress website regularly.  Happy auto updating!
 
 ## Installation 
 
