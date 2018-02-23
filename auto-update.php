@@ -93,13 +93,12 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 
 function the_auto_update_options_page() {
 
-	if (isset($_POST['awesome_text'])) {
-		update_option('awesome_text', $_POST['awesome_text']);
-		$value = $_POST['awesome_text'];
+	if (isset($_POST['on_switch'])) {
+		update_option('on_switch', $_POST['on_switch']);
+		$value = $_POST['on_switch'];
 	} 
 
-	$value = get_option('awesome_text', 'This is my setting');
+	$on_switch = get_option('on_switch', 'checked');
 
 	include 'auto-options.php';
 }
-

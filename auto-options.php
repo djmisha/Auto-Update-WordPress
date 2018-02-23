@@ -9,22 +9,19 @@
  <div class="wrap">
  	<?php screen_icon(); ?>
  	<h2>WordPress Auto Update Plugin Information </h2>
- 	<p>The plugin is active and running.  There is nothing more to do!  Your WordPress will now update automatically. </p>
+ 	<p>Your WordPress will now update automatically if the ON option below is checked.. </p>
 
  	<form method="POST">
  		<?php settings_fields( 'the_auto_update_options_group' ); ?>
- 		<table>
- 			<tr valign="top">
- 				<th scope="row">
- 					<label for="the_auto_update_option_name_on_switch">Turn Updates ON</label>
- 				</th>
- 				<td>
- 					<input type="checkbox" id="the_auto_update_option_name_on_switch" name="the_auto_update_option_name_on_switch" value="<?php echo get_option('the_auto_update_option_name_on_switch'); ?>" />
- 				</td>
- 			</tr>
- 		</table>
- 		<label for="awesome_text">Awesome Text</label>
- 		    <input type="text" name="awesome_text" id="awesome_text" value="<?php echo $value; ?>">
+ 		
+ 		<label for="on_switch">Turn Updates ON</label>
+ 		    <input type="input" name="on_switch" id="on_switch" value="<?php echo($on_switch); ?>"
+			
+			<?php if($on_switch == 'checked') {echo $on_switch;}  ?>
+
+ 		     >
+ 		    <br>
+ 		    <br>
  		    <input type="submit" value="Save" class="button button-primary button-large">
  	</form>
  </div>
@@ -37,13 +34,13 @@
 
 // How Available Plugin Updates
 $update_data = wp_get_update_data();
-echo '<h3>';
+echo '<h2>';
 echo $update_data['counts']['plugins'] . ' updates available. ';
-echo '</h3>';
+echo '</h2>';
 
 // List of All Install Plugins 
 $all_plugins = get_plugins();
-echo '<h2>Currently Installed Plugins</h2>';
+echo '<h2>Installed Plugins</h2>';
 
 foreach ($all_plugins as $oneplugin ) {
 	echo '<div class="plugin-list">';
