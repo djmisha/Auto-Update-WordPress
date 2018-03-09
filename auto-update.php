@@ -4,15 +4,16 @@
   Plugin Name: WordPress Auto Update  
   Plugin URI: http://mynameismisha.com
   Description: This plugin will update your WordPress site automatically.   
-  Version: 420 
+  Version: 420.2 
   Author: Misha Osinovskiy
   Author URI: http://mynameismisha.com
-  Disclaimer: Use at your own risk and backup your website early and often. 
+  Disclaimer: Use this plugin at your own risk and backup your website early and often. 
  */
 
-/*=================================================================
-=            Create a Link to Setting in the Plugin Listing            =
-=================================================================*/
+
+/*==========================================================================
+=            Create a Link to Settings PAge in the Plugin Listi            =
+==========================================================================*/
 
 function plugin_add_settings_link( $links ) {
 
@@ -22,6 +23,7 @@ function plugin_add_settings_link( $links ) {
 }
 
 $plugin = plugin_basename( __FILE__ );
+
 add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
 
 
@@ -61,21 +63,8 @@ updateTheWordPress();
 =            Register an Options Page Admin > Setting            =
 ================================================================*/
 
-function the_auto_update_register_settings() {
-	// you can add more options like this
-	add_option( 'the_auto_update_option_name_on_switch', 'Value');
-
-	register_setting( 
-		'the_auto_update_options_group', 
-		'the_auto_update_option_name', 
-		'the_auto_update_callback'
-	);
-}
-
-add_action( 'admin_init', 'the_auto_update_register_settings' );
-
 function the_auto_update_register_options_page() {
-	add_options_page(
+	add_menu_page(
 		'Auto Update', 
 		'Auto Update', 
 		'manage_options', 
@@ -93,12 +82,6 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 
 function the_auto_update_options_page() {
 
-	if (isset($_POST['on_switch'])) {
-		update_option('on_switch', $_POST['on_switch']);
-		$value = $_POST['on_switch'];
-	} 
-
-	$on_switch = get_option('on_switch', 'checked');
-
 	include 'auto-options.php';
+
 }

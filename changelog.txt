@@ -1,0 +1,17 @@
+
+# Plugin Change Log
+
+## To Do
+
+* add turn on switch to options page for plugin to work
+* add turn on options for Core, Plugins, Themes
+* layout installed plguins more nicely 
+
+### 03/09/2018 
+* changed Settings page to a Manu page
+* cleaned up undeeded code
+
+### 02/23/2018 
+
+* added "Settings" link on under Plugin info
+
