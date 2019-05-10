@@ -1,18 +1,18 @@
 <?php
 
 /*
-  Plugin Name: WordPress Auto Update  
+  Plugin Name: The Auto Update for WordPress  
   Plugin URI: http://mynameismisha.com
-  Description: This plugin will update your WordPress site automatically.   
-  Version: 420.2 
+  Description: This plugin will update your WordPress core, themes and plugins automatically.
+  Version: 420
   Author: Misha Osinovskiy
-  Author URI: http://mynameismisha.com
-  Disclaimer: Use this plugin at your own risk and backup your website early and often. 
+  Author URI: https://mynameismisha.com
+  Disclaimer: Use this plugin at your own risk and backup your WordPress website files and database early and often. 
  */
 
 
 /*==========================================================================
-=            Create a Link to Settings PAge in the Plugin Listi            =
+=            Create a Link to Settings Page on the Plugin List Page        =
 ==========================================================================*/
 
 function plugin_add_settings_link( $links ) {
@@ -65,8 +65,8 @@ updateTheWordPress();
 
 function the_auto_update_register_options_page() {
 	add_menu_page(
-		'Auto Update', 
-		'Auto Update', 
+		'WP Auto Update', 
+		'WP Auto Update', 
 		'manage_options', 
 		'the_auto_update', 
 		'the_auto_update_options_page'

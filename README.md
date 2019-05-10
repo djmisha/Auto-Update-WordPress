@@ -6,12 +6,18 @@ The WordPress Auto Update Plugin will update your WordPress core, Themes and Plu
 
 ## Installation 
 
+### Normal Plugin
 * Install into */plugins/* folder and Activate. That is all! 
 
-* or Install into the /mu-plugins/ folder in the /wp-contents/ folder. This will activate the plugin and from there it will work automatically and it cannot not be deactivated or deleted from the Admin area.
+### Must Use Plugin
+* or Install into the /mu-plugins/ folder in the /wp-contents/ folder. This will activate the plugin and from there it will work automatically and it cannot not be deactivated or deleted from the Wordpress Administration area.
 
 ## Options Page
 
 This page show your installed plugins and the available updates.
+
+There is nothing more else to do.  
+
+Pull are requests welcome. 
 
 	

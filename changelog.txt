@@ -3,9 +3,16 @@
 
 ## To Do
 
+* add update now button to options page
 * add turn on switch to options page for plugin to work
 * add turn on options for Core, Plugins, Themes
-* layout installed plguins more nicely 
+* layout installed plguins on options page more nicely 
+
+###
+05/10/2019
+* welcomed pull requests
+* expanded options page
+* renamed plugin
 
 ### 03/09/2018 
 * changed Settings page to a Manu page

@@ -9,8 +9,13 @@
  <div class="wrap">
  	<?php screen_icon(); ?>
  	<h1>WordPress Auto Update Plugin Settings </h1>
- 	<p>Your WordPress will now update automatically. There is nothing more else todo.  </p>
-
+ 	<p>Your WordPress will now update automatically. There is nothing more else todo. </p>
+	
+	<h2>Site Details</h2>
+	<strong>Website: <?php get_bloginfo('url'); ?></strong>
+	<strong>WordPress Version <?php get_bloginfo('version'); ?></strong>
+	<strong>Theme Directory <?php get_bloginfo('template_url'); ?></strong>
+	
  	<?php 
 
 /*=======================================
