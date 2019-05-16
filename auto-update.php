@@ -11,6 +11,17 @@
  */
 
 
+
+if ( !defined('ABSPATH') )
+	die ( 'YOU SHALL NOT PASS!' );
+
+
+define( 'AUTO_UPDATE_PATH', plugin_dir_path(__FILE__) );
+define( 'AUTO_UPDATE_URL', plugin_dir_url(__FILE__) );
+define( 'AUTO_UPDATE_BASE', plugin_basename( __FILE__ ) );
+define( 'AUTO_UPDATE_VERSION', '420' );
+
+
 /*==========================================================================
 =            Create a Link to Settings Page on the Plugin List Page        =
 ==========================================================================*/
@@ -83,5 +94,26 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 function the_auto_update_options_page() {
 
 	include 'auto-options.php';
+
+}
+
+
+
+
+// Run update checker code
+if ( file_exists(dirname(__FILE__) . '/plugin-update-checker/plugin-update-checker.php') ) {
+
+	if ( !class_exists('Puc_v4_Factory') ) {
+		require 'plugin-update-checker/plugin-update-checker.php';
+	}
+
+	if ( class_exists('Puc_v4_Factory') ) {
+		$autoUpdatePluginChecker = Puc_v4_Factory::buildUpdateChecker(
+		    'http://plugins.rosemontmedia.com/wp-update-server/?action=get_metadata&slug=the-auto-update',
+		    __FILE__,
+		    'the-auto-update',
+		    24
+		);
+	}
 
 }
