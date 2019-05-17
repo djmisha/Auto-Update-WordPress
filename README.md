@@ -1,4 +1,4 @@
-# WordPress Auto Update Plugin
+# The Auto Update WordPress Plugin
  
 ## How does it work? 
 

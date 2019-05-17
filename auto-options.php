@@ -12,11 +12,11 @@
  	<p>Your WordPress will now update automatically. There is nothing more else todo. </p>
 	
 	<h2>Site Details</h2>
-	<strong>Website: <?php //get_bloginfo('url'); ?></strong>
-	<strong>WordPress Version <?php //get_bloginfo('version'); ?></strong>
-	<strong>Theme Directory <?php //get_bloginfo('template_url'); ?></strong>
+	<strong>Website: <?php get_bloginfo('url'); ?></strong><br>
+	<strong>WordPress Version: <?php get_bloginfo('version'); ?></strong><br>
+	<strong>Theme Directory: <?php get_bloginfo('template_url'); ?></strong><br>
 	
- 	<?php 
+<?php 
 
 /*=======================================
 =            Show All Plugins           =
@@ -39,9 +39,6 @@ foreach ($all_plugins as $oneplugin ) {
 	echo '</div>';
 }
 
-// Final Save Button not needed right now
-
-// echo submit_button();
 
 ?>
 
