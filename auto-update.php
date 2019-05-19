@@ -7,9 +7,8 @@
   Version: 420
   Author: Misha Osinovskiy
   Author URI: https://mynameismisha.com
-  Disclaimer: Use this plugin at your own risk and be sure to regularly backup WordPress content files and database. 
+  Disclaimer: Always be be sure to regularly backup WordPress content files and database. 
  */
-
 
 
 if ( !defined('ABSPATH') )
@@ -20,6 +19,71 @@ define( 'AUTO_UPDATE_PATH', plugin_dir_path(__FILE__) );
 define( 'AUTO_UPDATE_URL', plugin_dir_url(__FILE__) );
 define( 'AUTO_UPDATE_BASE', plugin_basename( __FILE__ ) );
 define( 'AUTO_UPDATE_VERSION', '420' );
+
+
+class AUTO_Update {
+
+	// Instance of this class
+	static $instance	= false;
+
+	// Plugin Slug
+	static $plugin_slug = "auto-update";
+
+	// Plugin data 
+	static $plugin_data = NULL;
+
+	// The data that will be echoed out in the head
+
+	private $payload 	= array();
+
+	public function __construct() {
+
+		// add_action( 'plugins_loaded', array( $this, 'plugin_init') );
+
+		// add_action( 'admin_notices', array( $this, 'data_notifications') );
+	}
+
+
+	/**
+	 * Singleton
+	 *
+	 * @return A single instance of the current class.
+	 */
+
+	public static function singleton() {
+
+		if ( !self::$instance )
+			self::$instance = new self();
+
+		return self::$instance;
+
+	}
+
+
+	public function plugin_init() {
+		// add_action( 'plugin/init', array( $this, 'add_our_files' ) );
+
+	}
+
+
+	public function add_our_files() {
+
+		// if ( is_admin() ) {
+
+		// 	if ( file_exists( AUTO_UPDATE_PATH .'auto-options.php' ) ) {
+		// 		include_once AUTO_UPDATE_PATH .'auto-options.php';
+		// 		AUTO_Update_Options::singleton();
+		// 	}
+
+
+		// } 
+
+	}
+}
+
+
+AUTO_Update::singleton();
+
 
 
 /*==========================================================================
@@ -70,11 +134,10 @@ function updateTheWordPress() {
 updateTheWordPress();
 
 
-/*================================================================
-=            Register an Options Page Admin > Setting            =
-================================================================*/
+
 
 function the_auto_update_register_options_page() {
+	
 	add_menu_page(
 		'WP Auto Update', 
 		'WP Auto Update', 
@@ -87,15 +150,21 @@ function the_auto_update_register_options_page() {
 add_action('admin_menu', 'the_auto_update_register_options_page');
 
 
+
+
 /*==========================================
 =            Call Options Page             =
 ==========================================*/
 
 function the_auto_update_options_page() {
-
+// 
 	include 'auto-options.php';
 
 }
+
+
+
+
 
 
 
