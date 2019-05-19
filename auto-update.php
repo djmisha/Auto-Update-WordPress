@@ -134,7 +134,7 @@ function updateTheWordPress() {
 updateTheWordPress();
 
 
-
+/* Register Options Page */
 
 function the_auto_update_register_options_page() {
 	
@@ -151,7 +151,6 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 
 
 
-
 /*==========================================
 =            Call Options Page             =
 ==========================================*/
@@ -161,10 +160,6 @@ function the_auto_update_options_page() {
 	include 'auto-options.php';
 
 }
-
-
-
-
 
 
 
