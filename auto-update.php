@@ -82,6 +82,7 @@ class AUTO_Update {
 }
 
 
+// Initiate our foundation class 
 AUTO_Update::singleton();
 
 

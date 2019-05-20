@@ -8,6 +8,9 @@
 * add turn on options for Core, Plugins, Themes
 * layout installed plguins on options page more nicely 
 
+### 05/19/2019
+* start refactor using class
+
 ### 05/17/2019
 * added plugin checker
 

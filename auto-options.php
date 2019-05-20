@@ -1,13 +1,12 @@
 <?php 
 
 
-
 if ( !defined('ABSPATH') )
 	die ( 'YOU SHALL NOT PASS!' );
 
 
 class AUTO_Update_Options { 
-	// Class will go here 
+	// Options class will go here 
 }
 
 /*==============================================
@@ -25,7 +24,7 @@ $update_data 		= wp_get_update_data();
  	<table class="wp-list-table widefat fixed">
  		<th>
 		 	<h1>WordPress Auto Update Plugin Settings </h1>
-		 	<p>Your WordPress will now update automatically. There is nothing more else todo. </p>
+		 	<p>Your WordPress will now update automatically. There is nothing else todo here. Check out information abour your website below. </p>
  		</th>
  		<tr>
  			<td>
@@ -57,4 +56,8 @@ $update_data 		= wp_get_update_data();
  			</td>
  		</tr>
  	</table>
+	<br>
+ 	<p>If you like this plugin and would like to contribute, pull requests are welcome here:
+ 	<a href="https://github.com/djmisha/the-auto-update">https://github.com/djmisha/the-auto-update</a>	
+ 	</p>
 </div>
