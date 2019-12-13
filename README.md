@@ -14,7 +14,7 @@ The WordPress Auto Update Plugin will update your WordPress core, Themes and Plu
 
 ## Options Page
 
-This page show your installed plugins and the available updates.
+This page show your installed plugins and the available updates. More to come to the options page.
 
 There is nothing more else to do.  
 
