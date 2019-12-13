@@ -8,8 +8,13 @@
 * add turn on options for Core, Plugins, Themes
 * layout installed plguins on options page more nicely 
 
+
+### 12/11/2019
+* fixed spelling on options page
+* add package.json and gulpfile.js
+
 ### 05/19/2019
-* start refactor using class
+* start refactor using singleton class
 
 ### 05/17/2019
 * added plugin checker

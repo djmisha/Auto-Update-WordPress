@@ -1,0 +1,23 @@
+{
+  "name": "the-auto-update",
+  "description": "WordPress auto update Plugin develobed by Misha Osinovskiy.",
+  "version": "420",
+  "homepage": "https://mynameismisha.com/",
+  "author": {
+    "name": "Misha Osinovskiy",
+    "url": "https://mynameismisha.com/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

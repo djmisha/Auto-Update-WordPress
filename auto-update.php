@@ -7,13 +7,14 @@
   Version: 420
   Author: Misha Osinovskiy
   Author URI: https://mynameismisha.com
-  Disclaimer: Always be be sure to regularly backup WordPress content files and database. 
+  Disclaimer: Use at your own risk. Always be be sure to regularly backup WordPress /wp-contents/ folder and the my SQL database. 
  */
 
 
 if ( !defined('ABSPATH') )
 	die ( 'YOU SHALL NOT PASS!' );
 
+/* Define Path Variables */
 
 define( 'AUTO_UPDATE_PATH', plugin_dir_path(__FILE__) );
 define( 'AUTO_UPDATE_URL', plugin_dir_url(__FILE__) );

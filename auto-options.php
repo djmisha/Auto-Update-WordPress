@@ -24,20 +24,17 @@ $update_data 		= wp_get_update_data();
  	<table class="wp-list-table widefat fixed">
  		<th>
 		 	<h1>WordPress Auto Update Plugin Settings </h1>
-		 	<p>Your WordPress will now update automatically. There is nothing else todo here. Check out information abour your website below. </p>
+		 	<p>Your WordPress will now update automatically. There is nothing else todo here. Check out information about your website below. </p>
  		</th>
  		<tr>
  			<td>
-
 				<h2>There are <?php echo $update_data['counts']['plugins']; ?> updates available</h2>
 				<h3>Site Details</h3>
-				<span>Website: <?php echo $wp_url ?></span><br>
-				<span>WordPress Core Version: <?php echo $wp_version; ?></span><br>
-				<span>Active Theme Directory: <?php echo $wp_template_url; ?></span><br>
-				
+				<span>Website: <?php echo $wp_url ?></span><br />
+				<span>WordPress Core Version: <?php echo $wp_version; ?></span><br />
+				<span>Active Theme Directory: <?php echo $wp_template_url; ?></span><br />
 
 				<?php 
-
 
 				// List of Pnstalled Plugins and Their versions  
 
