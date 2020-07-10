@@ -39,7 +39,7 @@ class AUTO_Update {
 
 	public function __construct() {
 
-		// add_action( 'plugins_loaded', array( $this, 'plugin_init') );
+		add_action( 'plugins_loaded', array( $this, 'plugin_init') );
 
 		// add_action( 'admin_notices', array( $this, 'data_notifications') );
 	}
@@ -62,22 +62,39 @@ class AUTO_Update {
 
 
 	public function plugin_init() {
-		// add_action( 'plugin/init', array( $this, 'add_our_files' ) );
+		add_action( 'plugin/init', array( $this, 'add_our_files' ) );
+
+		add_action( 'admin_notices', array( $this, 'plguin_is_active_notice' ), 22 );
 
 	}
 
 
 	public function add_our_files() {
 
-		// if ( is_admin() ) {
+		if ( is_admin() ) {
 
-		// 	if ( file_exists( AUTO_UPDATE_PATH .'auto-options.php' ) ) {
-		// 		include_once AUTO_UPDATE_PATH .'auto-options.php';
-		// 		AUTO_Update_Options::singleton();
-		// 	}
+			if ( file_exists( AUTO_UPDATE_PATH .'auto-options.php' ) ) {
+				include_once AUTO_UPDATE_PATH .'auto-options.php';
+				AUTO_Update_Options::singleton();
+			}
 
+		} 
 
-		// } 
+	}
+
+	public function plguin_is_active_notice() {
+
+		if ( is_plugin_active( 'the-auto-update/auto-update.php' ) ) { ?>
+
+			<div class="notice notice-success is-dismissible"">
+				<p>You are automatically upgrading WordPress. You are very smart and deserver a cookie. </p>
+				<button type="button" class="notice-dismiss">
+					<span class="screen-reader-text">Dismiss this notice.</span>
+				</button>
+			</div>
+
+			<?php
+		}
 
 	}
 }

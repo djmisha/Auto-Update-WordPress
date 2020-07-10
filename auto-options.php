@@ -21,10 +21,11 @@ $update_data 		= wp_get_update_data();
 ?>
 
  <div class="wrap">
+			<h1>WordPress Auto Update Plugin Settings </h1>
  	<table class="wp-list-table widefat fixed">
  		<th>
-		 	<h1>WordPress Auto Update Plugin Settings </h1>
-		 	<p>Your WordPress will now update automatically. There is nothing else todo here. Check out information about your website below. </p>
+		 <p>Your WordPress will now update automatically. There is nothing else todo here. Check out information about your website below. </p>
+		
  		</th>
  		<tr>
  			<td>
@@ -40,10 +41,6 @@ $update_data 		= wp_get_update_data();
 
 				$all_plugins = get_plugins();
 				echo '<h3>Installed Plugins:</h3>';
-
-				echo '<pre>';
-				print_r($all_plugins);
-				echo '</pre>';
 
 				foreach ($all_plugins as $oneplugin ) {
 					echo '<div class="plugin-list">';
