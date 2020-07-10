@@ -41,10 +41,17 @@ $update_data 		= wp_get_update_data();
 				$all_plugins = get_plugins();
 				echo '<h3>Installed Plugins:</h3>';
 
+				echo '<pre>';
+				print_r($all_plugins);
+				echo '</pre>';
+
 				foreach ($all_plugins as $oneplugin ) {
 					echo '<div class="plugin-list">';
 					echo '<span><strong>' . $oneplugin['Name'] . '</strong></span>: ';
-					echo '<span> Version ' . $oneplugin['Version'] . '</span>' ;
+					echo '<span> | Version: ' . $oneplugin['Version'] . '</span>' ;
+					echo '<span> | Author: ' . $oneplugin['Author'] . '</span>' ;
+					echo '<span> | Description: ' . $oneplugin['Description'] . '</span>' ;
+					echo '<span> | Website: <a href="' . $oneplugin['AuthorURI'] . '">' . $oneplugin['AuthorURI'] . '</a></span>' ;
 					echo '</div>';
 				}
 
