@@ -21,11 +21,10 @@ $update_data 		= wp_get_update_data();
 ?>
 
  <div class="wrap">
-			<h1>WordPress Auto Update Plugin Settings </h1>
+	<h1>WordPress Auto Update Plugin Settings </h1>
  	<table class="wp-list-table widefat fixed">
  		<th>
-		 <p>Your WordPress will now update automatically. There is nothing else todo here. Check out information about your website below. </p>
-		
+			<p>Your WordPress will now update automatically. There is nothing else todo here. Check out information about your website below. </p>
  		</th>
  		<tr>
  			<td>
