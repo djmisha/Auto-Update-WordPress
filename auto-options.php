@@ -1,12 +1,14 @@
-<?php 
+<?php
 
 
-if ( !defined('ABSPATH') )
-	die ( 'YOU SHALL NOT PASS!' );
+if (!defined('ABSPATH')) {
+    die('YOU SHALL NOT PASS!');
+}
 
 
-class AUTO_Update_Options { 
-	// Options class will go here 
+class AUTO_Update_Options
+{
+    // Options class will go here
 }
 
 /*==============================================
@@ -21,10 +23,12 @@ $update_data 		= wp_get_update_data();
 ?>
 
  <div class="wrap">
-	<h1>WordPress Auto Update Plugin Settings </h1>
+	<h1>Auto Update Plugin Settings and Information</h1>
  	<table class="wp-list-table widefat fixed">
  		<th>
-			<p>Your WordPress will now update automatically. There is nothing else todo here. Check out information about your website below. </p>
+			<p>With this plugin activated this WordPress installation will update automatically as releases are availabe for themes, plugins and core software.  
+			</p>
+			Check out some information about your website below. </p>
  		</th>
  		<tr>
  			<td>
@@ -34,30 +38,30 @@ $update_data 		= wp_get_update_data();
 				<span>WordPress Core Version: <?php echo $wp_version; ?></span><br />
 				<span>Active Theme Directory: <?php echo $wp_template_url; ?></span><br />
 
-				<?php 
+				<?php
 
-				// List of Pnstalled Plugins and Their versions  
+                // List of Installted Plugins and Their versions
 
-				$all_plugins = get_plugins();
-				echo '<h3>Installed Plugins:</h3>';
+                $all_plugins = get_plugins();
+                echo '<h3>Installed Plugins:</h3>';
 
-				foreach ($all_plugins as $oneplugin ) {
-					echo '<div class="plugin-list">';
-					echo '<span><strong>' . $oneplugin['Name'] . '</strong></span>: ';
-					echo '<span> | Version: ' . $oneplugin['Version'] . '</span>' ;
-					echo '<span> | Author: ' . $oneplugin['Author'] . '</span>' ;
-					echo '<span> | Description: ' . $oneplugin['Description'] . '</span>' ;
-					echo '<span> | Website: <a href="' . $oneplugin['AuthorURI'] . '">' . $oneplugin['AuthorURI'] . '</a></span>' ;
-					echo '</div>';
-				}
+                foreach ($all_plugins as $oneplugin) {
+                    echo '<div class="plugin-list">';
+                    echo '<span><strong>' . $oneplugin['Name'] . '</strong></span>: ';
+                    echo '<span> | Version: ' . $oneplugin['Version'] . '</span>' ;
+                    echo '<span> | Author: ' . $oneplugin['Author'] . '</span>' ;
+                    echo '<span> | Description: ' . $oneplugin['Description'] . '</span>' ;
+                    echo '<span> | Website: <a href="' . $oneplugin['AuthorURI'] . '">' . $oneplugin['AuthorURI'] . '</a></span>' ;
+                    echo '</div>';
+                }
 
-				?>
+                ?>
 
  			</td>
  		</tr>
  	</table>
 	<br>
- 	<p>If you like this plugin and would like to contribute, pull requests are welcome here:
+ 	<p>If you like this plugin and would like to contribute, pull requests are welcome:
  	<a href="https://github.com/djmisha/the-auto-update">https://github.com/djmisha/the-auto-update</a>	
  	</p>
 </div>
