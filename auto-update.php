@@ -4,7 +4,7 @@
   Plugin Name: Auto Update WordPress
   Plugin URI: https://github.com/djmisha/the-auto-update
   Description: This plugin updates your WordPress core, themes and plugins automatically.
-  Version: 420-04
+  Version: 420
   Author: Misha Osinovskiy
   Author URI: https://mynameismisha.com
   Disclaimer: Use at your own risk. Always be be sure to regularly backup WordPress /wp-contents/ folder and the my SQL database.
@@ -65,9 +65,9 @@ class AUTO_Update
 
     public function plugin_init()
     {
-        add_action('plugin/init', array( $this, 'add_our_files' ));
+        // add_action('plugin/init', array( $this, 'add_our_files' ));
 
-        add_action('admin_notices', array( $this, 'plguin_is_active_notice' ), 22);
+        // add_action('admin_notices', array( $this, 'plguin_is_active_notice' ), 22);
     }
 
 
@@ -157,13 +157,21 @@ updateTheWordPress();
 
 function the_auto_update_register_options_page()
 {
-    add_menu_page(
+    // Register Submenu Item under 'Tools'
+    add_submenu_page(
+        'tools.php',
         'Auto Update',
         'Auto Update',
         'manage_options',
         'the_auto_update',
         'the_auto_update_options_page'
     );
+    
+    // Include File to page
+    function the_auto_update_options_page()
+    {
+        include 'auto-options.php';
+    }
 }
 
 add_action('admin_menu', 'the_auto_update_register_options_page');
@@ -174,11 +182,6 @@ add_action('admin_menu', 'the_auto_update_register_options_page');
 =            Call Options Page             =
 ==========================================*/
 
-function the_auto_update_options_page()
-{
-//
-    include 'auto-options.php';
-}
 
 
 
