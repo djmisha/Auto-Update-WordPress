@@ -4,7 +4,7 @@
   Plugin Name: Auto Update WordPress
   Plugin URI: https://github.com/djmisha/the-auto-update
   Description: This plugin updates your WordPress core, themes and plugins automatically.
-  Version: 420.02
+  Version: 420-04
   Author: Misha Osinovskiy
   Author URI: https://mynameismisha.com
   Disclaimer: Use at your own risk. Always be be sure to regularly backup WordPress /wp-contents/ folder and the my SQL database.
